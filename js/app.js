@@ -39,20 +39,20 @@ function setWinner(){
 
             console.log("Mickey won!!");
             msg = "Mickey won!!";
-            $('.message').html(msg);
-            //alert(msg);
+
 
           }
           else if( winner.getItem('Donald') > winner.getItem('Mickey') ){
             console.log("Donald won!!");
             msg = "Donald won!!";
-            $('.message').append(msg);
+
           }
           else {
             console.log("It's a tie!!");
             msg = "It's a tie!!";
-            $('.message').append(msg);
+
           }
-          $('.message').show();
+          $('.message').append(msg);
+          //alert(msg);
 
 }
