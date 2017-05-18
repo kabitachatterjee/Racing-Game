@@ -1,0 +1,23 @@
+.container{
+  background-color: 'yellow';
+}
+
+body {
+  background-color: black;
+  color: gray;
+  font-weight: 300;
+}
+.center{
+  text-align: center;
+}
+.row-spacer{
+  margin-top:100px;
+}
+img{
+  height:150px;
+  width: 150px;
+  display: block;
+}
+.verticalLine {
+  border-right: thick solid white;
+}
