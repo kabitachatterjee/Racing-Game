@@ -21,3 +21,7 @@ img{
 .verticalLine {
   border-right: thick solid white;
 }
+.message {
+  font-size: 30px;
+  color: red;
+}

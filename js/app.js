@@ -1,31 +1,32 @@
 console.log("JS file linked");
 
 let width = $(window).width();
-console.log(width);
-let countOfClicks1 = 0;
-let countOfClicks2 = 0;
+let countOfClicksM = 0;
+let countOfClicksD = 0;
  winner = localStorage;
 
 
 $(window).keypress(function (e) {
+  e.preventDefault();
 
-        if (e.keyCode === 109 && (width - (165 + countOfClicks1 * 150) >=280)) {
-          countOfClicks1++;
+        if (e.keyCode === 109 && (width - (165 + countOfClicksM * 150) >=280)) {
+          countOfClicksM++;
           $("#hero1").css("margin-left","+=150px");
-          winner.setItem('Mickey', countOfClicks1);
+          winner.setItem('Mickey', countOfClicksM);
 
       }
 
-  else if (e.keyCode === 100 && (width - (165 + countOfClicks2 * 150) >=280)) {
-        countOfClicks2++;
+  else if (e.keyCode === 100 && (width - (165 + countOfClicksD * 150) >=280)) {
+        countOfClicksD++;
         $("#hero2").css("margin-left","+=150px");
-        winner.setItem('Donald', countOfClicks2);
+        winner.setItem('Donald', countOfClicksD);
     }
 
     else {
       location.reload();
       $(document).ready(function(){
         setWinner();
+        winner.clear();
 });
 }
 
@@ -33,16 +34,25 @@ $(window).keypress(function (e) {
 
 });
 function setWinner(){
-  console.log(winner);
+  var msg = "";
   if( winner.getItem('Mickey') > winner.getItem('Donald') ){
 
             console.log("Mickey won!!");
+            msg = "Mickey won!!";
+            $('.message').html(msg);
+            //alert(msg);
+
           }
           else if( winner.getItem('Donald') > winner.getItem('Mickey') ){
             console.log("Donald won!!");
+            msg = "Donald won!!";
+            $('.message').append(msg);
           }
           else {
             console.log("It's a tie!!");
+            msg = "It's a tie!!";
+            $('.message').append(msg);
           }
+          $('.message').show();
 
 }
